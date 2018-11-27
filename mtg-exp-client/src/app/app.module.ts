@@ -58,7 +58,9 @@ const routes: Routes = [
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' })
 
   ],
-  providers: [],
+  providers: [
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
